@@ -1,0 +1,30 @@
+{
+  "name": "bi-app",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": ".",
+  "dependencies": {
+    "less": "^3.8.1",
+    "echarts": "^4.1.0",
+    "axios": "^0.18.0",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "react-scripts": "1.1.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "release": "git-directory-deploy --username deployBot --email deployBot@qq.com --directory build/ --branch gh-pages --repo git@gitlab.intebox.com:FE/release/bi-release.git"
+  },
+  "proxy": {
+    "/saas20/api/": {
+      "target": "http://betaplus.unovo.com.cn",
+      "changeOrigin": true
+    }
+  },
+  "devDependencies": {
+    "git-directory-deploy": "^1.5.1"
+  }
+}

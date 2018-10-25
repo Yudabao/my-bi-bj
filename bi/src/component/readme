@@ -1,0 +1,56 @@
+柱状图  横着的不用做修改
+竖着的修改如下：
+对接口返回数据增加如下配置， 用法
+
+this.state = {
+      verticalBar: {
+        xData: ['10-12', '12-34', '12-35', '12-36', '12-37', '12-39']
+      }
+    }
+
+<Bar
+  verticalBar={this.state.verticalBar}
+/>
+
+横着的参数：acrossBar
+数据格式为：
+{name: '停水', value: 5},
+{name: '停电', value: 10},
+{name: '锁房', value: 15},
+
+竖着的参数：verticalBar
+数据格式为：verticalBar： {
+seriesDataOne: [10, 12, 45],
+seriesDataTwo: [10, 12, 45],
+xData: ['10-12', '12-34', '12-35', '12-36', '12-37', '12-39']
+}
+
+
+饼图数据格式：
+roseTypeData ===> 支付渠道数据参数
+pieData ====> 实时功率分布数据
+
+data: [
+          {name: '支付宝', value: 5},
+          {name: '银行卡', value: 6},
+          {name: '微信', value: 7},
+          {name: '月账户', value: 15},
+          {name: '现金', value: 15},
+          {name: '其他', value: 15},
+        ],
+
+折线图：
+一条线数据结构： [5, 20, 36, 40, 20, 5]
+一条线需要注意  一个是出租率  一个是收支趋势
+详细配置：
+出租率：legend: {show: false}
+收支趋势：series 下的 areaStyle设置值（其他的折现图不要阴影）
+
+
+两条线：传入两个数据的data
+
+仪表图：
+参数 gaugeData
+
+text是下方标题
+data是展示数据 [5] 或者 [{value: 40, name: 'km/h'}]
